@@ -9,12 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.1",
+    "next": "13.5.5",
     "react": "^18",
     "react-dom": "^18",
-    "next": "13.5.5"
+    "stylelint": "^15.11.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.7.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-scss": "^5.2.1"
   },
   "devDependencies": {
     "eslint": "^8",
     "eslint-config-next": "13.5.5"
+  },
+  "lint-staged": {
+    "src/**/*.{js,html.css}": "prettier --write",
+    "src/**/*.js": "eslint"
   }
 }
