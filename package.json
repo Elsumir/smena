@@ -6,25 +6,33 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "link": "eslint .",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "husky": "^8.0.3",
-    "lint-staged": "^15.0.1",
     "next": "13.5.5",
     "react": "^18",
-    "react-dom": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "13.5.5",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.0.1",
     "stylelint": "^15.11.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.7.0",
     "stylelint-order": "^6.0.3",
     "stylelint-scss": "^5.2.1"
   },
-  "devDependencies": {
-    "eslint": "^8",
-    "eslint-config-next": "13.5.5"
-  },
   "lint-staged": {
-    "src/**/*.{js,html.css}": "prettier --write",
-    "src/**/*.js": "eslint"
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --ignore-path .gitignore --fix",
+      "prettier --ignore-path .gitignore --write"
+    ],
+    "src/**/*.{css,scss}": [
+      "stylelint"
+    ]
   }
 }
