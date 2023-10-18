@@ -142,7 +142,6 @@
         "ignorePattern": "goog.(module|require)"
       }
     ],
-    "new-cap": "error",
     "no-array-constructor": "error",
     "no-mixed-spaces-and-tabs": "error",
     "no-multiple-empty-lines": [
@@ -154,7 +153,7 @@
     "no-new-object": "error",
     "no-tabs": "error",
     "no-trailing-spaces": "error",
-    "object-curly-spacing": "error",
+    "object-curly-spacing": 0,
     "one-var": [
       "error",
       {

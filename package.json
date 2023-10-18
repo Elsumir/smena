@@ -21,6 +21,7 @@
     "husky": "^8.0.0",
     "lint-staged": "^15.0.1",
     "prettier": "^3.0.3",
+    "prop-types": "^15.8.1",
     "stylelint": "^15.11.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.7.0",
     "stylelint-order": "^6.0.3",
