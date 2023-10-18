@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "link": "eslint .",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -27,11 +26,12 @@
     "stylelint-scss": "^5.2.1"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": [
+    "./src/**/*.{js,jsx,ts,tsx}": [
+      "lint",
       "eslint --ignore-path .gitignore --fix",
       "prettier --ignore-path .gitignore --write"
     ],
-    "src/**/*.{css,scss}": [
+    "./src/**/*.{css,scss}": [
       "stylelint"
     ]
   }
