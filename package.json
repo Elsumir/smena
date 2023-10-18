@@ -6,15 +6,36 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "eslint": "eslint --ignore-path \"src/**/*.+(js|jsx)\"",
+    "stylelint": "stylelint **/*.css",
+    "stylelint-fix": "stylelint **/*.css --fix"
   },
   "dependencies": {
+    "next": "13.5.5",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "13.5.5"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "eslint": "^8",
-    "eslint-config-next": "13.5.5"
+    "eslint-config-next": "13.5.5",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.0.1",
+    "prettier": "^3.0.3",
+    "prop-types": "^15.8.1",
+    "stylelint": "^15.11.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.7.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-scss": "^5.2.1"
+  },
+  "lint-staged": {
+    "./src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --ignore-path .gitignore --fix"
+    ],
+    "./src/**/*.{css,scss}": [
+      "stylelint"
+    ]
   }
 }
