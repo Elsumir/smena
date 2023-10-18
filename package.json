@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "eslint": "eslint --ignore-path \"src/**/*.+(js|jsx)\"",
+    "stylelint": "stylelint **/*.css",
+    "stylelint-fix": "stylelint **/*.css --fix"
   },
   "dependencies": {
     "next": "13.5.5",
