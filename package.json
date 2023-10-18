@@ -16,11 +16,15 @@
   "dependencies": {
     "next": "13.5.5",
     "react": "^18",
+    "react-calendar": "^4.6.1",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.22.15",
+    "babel-eslint": "^10.1.0",
     "eslint": "^8",
     "eslint-config-next": "13.5.5",
+    "eslint-plugin-react": "^7.33.2",
     "husky": "^8.0.0",
     "lint-staged": "^15.0.1",
     "prettier": "^3.0.3",
