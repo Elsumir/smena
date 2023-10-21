@@ -1,4 +1,21 @@
-.react-calendar__year-view__months__month {
-  color: rgb(0, 0, 0);
-  background-color: rgb(255, 253, 253);
+.day {
+  background-color: rgb(241, 123, 123);
+}
+
+.night {
+  color: rgb(245, 245, 245);
+  background-color: rgb(80, 79, 79);
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  opacity: 0.4;
+}
+
+.react-calendar__tile--now {
+  border: 1px solid rgb(28, 100, 255);
+  background: none;
+}
+
+.react-calendar__tile--active {
+  background: none;
 }
