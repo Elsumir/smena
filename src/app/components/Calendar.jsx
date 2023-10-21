@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import 'react-calendar/dist/Calendar.css';
 import Calendar from 'react-calendar';
-import './Calendar.css';
+import './Calendar.scss';
 
 export const GetCalendar = () => {
   const [value, onChange] = useState(new Date());
