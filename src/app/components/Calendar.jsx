@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import 'react-calendar/dist/Calendar.css';
 import Calendar from 'react-calendar';
-import './Calendar.css';
+import './Calendar.scss';
 
 export const GetCalendar = () => {
   const [value, onChange] = useState(new Date());
@@ -17,7 +18,6 @@ export const GetCalendar = () => {
           const days = Math.floor(
             (Date.parse(date) / (1000 * 60 * 60 * 24)) % 4
           );
-
           const painting = days === 3 ? 'day' : days === 0 ? 'night' : '';
           return painting;
         }}
