@@ -1,0 +1,52 @@
+$transparent: rgba(250, 7, 7, 0);
+$white: rgb(255, 255, 255);
+$color: rgb(0, 0, 0);
+$day: rgb(241, 123, 123);
+$night: rgb(80, 79, 79);
+
+@mixin de-active {
+  color: $color;
+  background-color: $transparent;
+}
+
+@mixin white-bg {
+  color: $color;
+  background-color: $white;
+}
+
+.day {
+  background-color: $day;
+}
+
+.night {
+  color: $white;
+  background-color: $night;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  opacity: 0.4;
+}
+
+.react-calendar__tile--active {
+  @include de-active;
+
+  &:enabled:hover {
+    @include de-active;
+  }
+
+  &:enabled:focus {
+    @include de-active;
+  }
+}
+
+.react-calendar__year-view__months__month {
+  @include white-bg;
+}
+
+.react-calendar__century-view__decades__decade {
+  @include white-bg;
+}
+
+.react-calendar__decade-view__years__year {
+  @include white-bg;
+}
