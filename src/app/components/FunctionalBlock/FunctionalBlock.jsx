@@ -15,7 +15,7 @@ export const FunctionalBlock = () => {
   };
 
   const windowsToggle = () => {
-    windows ? setWindows(false) : setWindows(true);
+    setWindows(!windows);
   };
 
   const result = () => {
