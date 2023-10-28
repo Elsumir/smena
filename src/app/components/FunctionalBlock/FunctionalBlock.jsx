@@ -1,12 +1,14 @@
 'use client';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import styles from './FunctionalBlock.module.scss';
+import { valueShiftContext } from '@/app/page';
 
 export const FunctionalBlock = () => {
   const [value, setValue] = useState('');
   const [resultDay, setResultDay] = useState('');
   const [weekDay, setWeekDay] = useState('');
   const [windows, setWindows] = useState(false);
+  const { setValueShift } = useContext(valueShiftContext);
 
   const formatDate = new Date(value).toDateString();
 
@@ -48,6 +50,7 @@ export const FunctionalBlock = () => {
     setWeekDay(weekDay);
     setResultDay(resultDay);
   };
+
   return (
     <div className={styles.wrapper}>
       {windows && (
@@ -62,7 +65,19 @@ export const FunctionalBlock = () => {
       )}
 
       <button onClick={windowsToggle}>поиск даты</button>
-      <button>другая смена</button>
+      <label>
+        Выберите смену:
+        <select
+          onChange={(e) => {
+            setValueShift(+e.target.value);
+          }}
+        >
+          <option value="0">Г</option>
+          <option value="2">А</option>
+          <option value="3">Б</option>
+          <option value="1">В</option>
+        </select>
+      </label>
     </div>
   );
 };
