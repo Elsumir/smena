@@ -3,6 +3,7 @@ import { createContext, useState } from 'react';
 import { GetCalendar } from './components/Calendar/Calendar';
 import { FunctionalBlock } from './components/FunctionalBlock/FunctionalBlock';
 import styles from './page.module.css';
+import { BlockColor } from './components/BlockColor/BlockColor';
 
 export const valueShiftContext = createContext(0);
 
@@ -15,6 +16,7 @@ export default function Home() {
         <GetCalendar />
         <FunctionalBlock />
       </valueShiftContext.Provider>
+      <BlockColor />
     </main>
   );
 }

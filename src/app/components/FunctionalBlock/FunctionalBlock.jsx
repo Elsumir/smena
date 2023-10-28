@@ -7,8 +7,9 @@ export const FunctionalBlock = () => {
   const [value, setValue] = useState('');
   const [resultDay, setResultDay] = useState('');
   const [weekDay, setWeekDay] = useState('');
+  const [notDate, setNotDate] = useState('');
   const [windows, setWindows] = useState(false);
-  const { setValueShift } = useContext(valueShiftContext);
+  const { valueShift, setValueShift } = useContext(valueShiftContext);
 
   const formatDate = new Date(value).toDateString();
 
@@ -32,7 +33,7 @@ export const FunctionalBlock = () => {
     ];
 
     const day = Math.floor(
-      (Date.parse(formatDate) / (1000 * 60 * 60 * 24)) % 4
+      (Date.parse(formatDate) / (1000 * 60 * 60 * 24) + valueShift) % 4
     );
 
     const shiftWork =
@@ -47,6 +48,11 @@ export const FunctionalBlock = () => {
     const resultDay = `По графику: ${shiftWork}`;
     const weekDay = `День недели: ${days[new Date(value).getDay()]}`;
 
+    if (!value) {
+      setNotDate('Введите дату');
+      return;
+    }
+    setNotDate('');
     setWeekDay(weekDay);
     setResultDay(resultDay);
   };
@@ -57,6 +63,7 @@ export const FunctionalBlock = () => {
         <div id="windowsSearch" className={styles.windowsSearch}>
           <span> Введите дату: </span>
           <input defaultValue={value} type="date" onChange={handlerChange} />
+          <span className={styles.notDate}>{notDate}</span>
           <button onClick={result}>найти дату</button>
           <span className={styles.result}>{resultDay}</span>
           <span className={styles.result}>{weekDay}</span>

@@ -1,0 +1,31 @@
+$day: rgb(241, 123, 123);
+$night: rgb(80, 79, 79);
+
+.blockColor {
+  display: flex;
+  flex-direction: column;
+  padding-top: 25px;
+  width: 340px;
+}
+
+.days {
+  position: relative;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  width: 20px;
+  height: 20px;
+
+  span {
+    position: absolute;
+    left: 35px;
+    width: 100px;
+  }
+}
+
+.day {
+  background: $day;
+}
+
+.night {
+  background: $night;
+}
