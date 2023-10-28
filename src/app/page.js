@@ -9,12 +9,16 @@ export const valueShiftContext = createContext(0);
 
 export default function Home() {
   const [storage, setStage] = useState('');
-
-  useEffect(() => {
-    setStage(+localStorage.getItem('shift'));
-  }, []);
+  console.log(storage);
 
   const [valueShift, setValueShift] = useState(storage);
+  useEffect(() => {
+    setStage(+localStorage.getItem('shift'));
+  }, [valueShift]);
+
+  useEffect(() => {
+    localStorage.setItem('shift', valueShift);
+  }, [valueShift]);
 
   return (
     <main className={styles.main}>

@@ -13,10 +13,6 @@ export const FunctionalBlock = () => {
   const storage = localStorage.getItem('shift');
 
   useEffect(() => {
-    localStorage.setItem('shift', valueShift);
-  }, [valueShift]);
-
-  useEffect(() => {
     if (!storage) {
       return;
     }
