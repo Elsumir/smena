@@ -8,8 +8,8 @@ import { BlockColor } from './components/BlockColor/BlockColor';
 export const valueShiftContext = createContext(0);
 
 export default function Home() {
-  const [valueShift, setValueShift] = useState(0);
-
+  const [valueShift, setValueShift] = useState(+localStorage.getItem('shift'));
+  localStorage.setItem('shift', valueShift);
   return (
     <main className={styles.main}>
       <valueShiftContext.Provider value={{ valueShift, setValueShift }}>

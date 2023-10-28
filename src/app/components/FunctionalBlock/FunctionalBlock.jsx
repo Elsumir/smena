@@ -1,5 +1,5 @@
 'use client';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import styles from './FunctionalBlock.module.scss';
 import { valueShiftContext } from '@/app/page';
 
@@ -10,6 +10,17 @@ export const FunctionalBlock = () => {
   const [notDate, setNotDate] = useState('');
   const [windows, setWindows] = useState(false);
   const { valueShift, setValueShift } = useContext(valueShiftContext);
+  const storage = localStorage.getItem('shift');
+  // selected
+  useEffect(() => {
+    if (!storage) {
+      return;
+    }
+    const option = document.querySelectorAll('option');
+    option.forEach((e) => {
+      storage === e.value && e.setAttribute('selected', 'selected');
+    });
+  }, [valueShift]);
 
   const formatDate = new Date(value).toDateString();
 
