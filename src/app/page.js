@@ -16,9 +16,9 @@ export default function Home() {
 
   const [valueShift, setValueShift] = useState(storage);
 
-  if (typeof window !== 'undefined') {
+  useEffect(() => {
     localStorage.setItem('shift', valueShift);
-  }
+  }, [valueShift]);
 
   return (
     <main className={styles.main}>
