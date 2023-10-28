@@ -16,10 +16,6 @@ export default function Home() {
 
   const [valueShift, setValueShift] = useState(storage);
 
-  useEffect(() => {
-    localStorage.setItem('shift', valueShift);
-  }, [valueShift]);
-
   return (
     <main className={styles.main}>
       <valueShiftContext.Provider value={{ valueShift, setValueShift }}>

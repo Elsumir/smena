@@ -11,7 +11,11 @@ export const FunctionalBlock = () => {
   const [windows, setWindows] = useState(false);
   const { valueShift, setValueShift } = useContext(valueShiftContext);
   const storage = localStorage.getItem('shift');
-  // selected
+
+  useEffect(() => {
+    localStorage.setItem('shift', valueShift);
+  }, [valueShift]);
+
   useEffect(() => {
     if (!storage) {
       return;
