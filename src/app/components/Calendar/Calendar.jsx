@@ -9,15 +9,17 @@ import { valueShiftContext } from '@/app/page';
 export const GetCalendar = () => {
   const [value, onChange] = useState(new Date());
   const { valueShift } = useContext(valueShiftContext);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
+    setLoading(false);
+    // нужен для правельного окраса смен,
+    // иначе не успевает прокрасить то что надо
   }, []);
 
   return (
     <>
-      {!loading ? (
+      {loading ? (
         'Загрузка...'
       ) : (
         <Calendar

@@ -7,8 +7,12 @@ import { BlockColor } from './components/BlockColor/BlockColor';
 export const valueShiftContext = createContext();
 
 export default function Home() {
-  const storage =
-    typeof window !== 'undefined' ? +localStorage.getItem('shift') : false;
+  let storage;
+  if (typeof window !== 'undefined') {
+    storage = +localStorage.getItem('shift');
+  } else {
+    storage = false;
+  }
 
   const [valueShift, setValueShift] = useState(storage);
 

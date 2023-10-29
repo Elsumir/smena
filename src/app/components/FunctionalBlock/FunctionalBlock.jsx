@@ -17,7 +17,9 @@ export const FunctionalBlock = () => {
     }
     const option = document.querySelectorAll('option');
     option.forEach((e) => {
-      valueShift === +e.value && e.setAttribute('selected', 'selected');
+      if (valueShift === +e.value) {
+        e.setAttribute('selected', 'selected');
+      }
     });
   }, [valueShift]);
 
