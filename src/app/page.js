@@ -4,17 +4,13 @@ import { GetCalendar } from './components/Calendar/Calendar';
 import { FunctionalBlock } from './components/FunctionalBlock/FunctionalBlock';
 import styles from './page.module.css';
 import { BlockColor } from './components/BlockColor/BlockColor';
-
-export const valueShiftContext = createContext(0);
+export const valueShiftContext = createContext();
 
 export default function Home() {
-  const [storage, setStage] = useState('');
-  console.log(storage);
+  const storage =
+    typeof window !== 'undefined' ? +localStorage.getItem('shift') : false;
 
   const [valueShift, setValueShift] = useState(storage);
-  useEffect(() => {
-    setStage(+localStorage.getItem('shift'));
-  }, [valueShift]);
 
   useEffect(() => {
     localStorage.setItem('shift', valueShift);

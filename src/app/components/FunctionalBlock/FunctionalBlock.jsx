@@ -10,15 +10,14 @@ export const FunctionalBlock = () => {
   const [notDate, setNotDate] = useState('');
   const [windows, setWindows] = useState(false);
   const { valueShift, setValueShift } = useContext(valueShiftContext);
-  const storage = localStorage.getItem('shift');
 
   useEffect(() => {
-    if (!storage) {
+    if (!valueShift) {
       return;
     }
     const option = document.querySelectorAll('option');
     option.forEach((e) => {
-      storage === e.value && e.setAttribute('selected', 'selected');
+      valueShift === +e.value && e.setAttribute('selected', 'selected');
     });
   }, [valueShift]);
 
