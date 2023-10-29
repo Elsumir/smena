@@ -27,18 +27,6 @@ $night: rgb(80, 79, 79);
   opacity: 0.4;
 }
 
-.react-calendar__tile--active {
-  @include de-active;
-
-  &:enabled:hover {
-    @include de-active;
-  }
-
-  &:enabled:focus {
-    @include de-active;
-  }
-}
-
 .react-calendar__year-view__months__month {
   @include white-bg;
 }
